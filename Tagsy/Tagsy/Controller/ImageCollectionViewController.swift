@@ -8,11 +8,18 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier = "imageCell"
+var uploadedImages: [UploadedImage] = []
+let imagePicker = UIImagePickerController()
 
-class ImageCollectionViewController: UICollectionViewController {
-
-    override func viewDidLoad() {
+class ImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  
+  @IBAction func tappedPlusButton(_ sender: UIBarButtonItem) {
+    imagePicker.sourceType = .photoLibrary
+    present(imagePicker, animated: true, completion: nil)
+  }
+  
+  override func viewDidLoad() {
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -20,6 +27,8 @@ class ImageCollectionViewController: UICollectionViewController {
 
         // Register cell classes
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    
+        imagePicker.delegate = self
 
         // Do any additional setup after loading the view.
     }
