@@ -4,7 +4,7 @@ public enum ImaggaRouter: URLRequestConvertible {
 
     enum Constants {
         static let baseURL = "https://api.imagga.com/v2"
-        static let authorizationToken = "Basic YWNjXzc2ZTYwZWZmNmQ4ZDc3Mzo5N"  // my API key
+        static let authorizationToken = "Basic YWNjXzc2ZTYwZWZmNmQ4ZDc3Mzo5NTExODFlNTJlZTkxN2Y4ZDViMDg4NTcyMzM3YzA1MQ=="  // my API key
     }
 
     case upload

@@ -21,6 +21,7 @@
 		B74916782416B83800A86A44 /* ImageLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74916772416B83800A86A44 /* ImageLoaderViewController.swift */; };
 		B749167B2416C26A00A86A44 /* ImaggaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749167A2416C26A00A86A44 /* ImaggaRouter.swift */; };
 		B749167D2416C35B00A86A44 /* ImaggaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B749167C2416C35B00A86A44 /* ImaggaAPI.swift */; };
+		B74916832416EF6A00A86A44 /* TagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74916822416EF6A00A86A44 /* TagCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B74916772416B83800A86A44 /* ImageLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewController.swift; sourceTree = "<group>"; };
 		B749167A2416C26A00A86A44 /* ImaggaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaggaRouter.swift; sourceTree = "<group>"; };
 		B749167C2416C35B00A86A44 /* ImaggaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImaggaAPI.swift; sourceTree = "<group>"; };
+		B74916822416EF6A00A86A44 /* TagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCell.swift; sourceTree = "<group>"; };
 		B8D8BBA81DFED8DF6256C35E /* Pods-Tagsy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tagsy.debug.xcconfig"; path = "Target Support Files/Pods-Tagsy/Pods-Tagsy.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				B74916642416AC0300A86A44 /* LaunchScreen.storyboard */,
 				B74916672416AC0300A86A44 /* Info.plist */,
 				B749165F2416AC0200A86A44 /* Tagsy.xcdatamodeld */,
+				B74916822416EF6A00A86A44 /* TagCell.swift */,
 			);
 			path = Tagsy;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B74916832416EF6A00A86A44 /* TagCell.swift in Sources */,
 				B749166F2416AEAE00A86A44 /* ImageCollectionViewController.swift in Sources */,
 				B74916572416AC0200A86A44 /* AppDelegate.swift in Sources */,
 				B749167D2416C35B00A86A44 /* ImaggaAPI.swift in Sources */,
