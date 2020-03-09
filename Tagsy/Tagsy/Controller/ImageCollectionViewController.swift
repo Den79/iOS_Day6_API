@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var imageLoaderViewController: ImageLoaderViewController?
 
 private let reuseIdentifier = "imageCell"
 var uploadedImages: [UploadedImage] = []
@@ -64,7 +65,23 @@ class ImageCollectionViewController: UICollectionViewController {
         return cell
     }
   
-  
+    // we  pass the image to our ImageLoaderViewController
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // our segue is technically to the ImageLoaderViewController's navigation controller
+        // so we need to check for that first and then access the image loader
+        // through the navigation controller's topViewController property
+        guard let imageLoaderNC = segue.destination as? UINavigationController,
+              let imageLoaderVC = imageLoaderNC.topViewController as? ImageLoaderViewController else {
+            return
+        }
+
+        // set up the ImageLoaderViewController with the data it needs
+        // prior to segueing
+        imageLoaderViewController = imageLoaderVC
+        imageLoaderViewController?.delegate = self
+        imageLoaderVC.uploadedImage = uploadedImages.last
+        return
+    }
 
     // MARK: UICollectionViewDelegate
 
@@ -120,6 +137,39 @@ extension ImageCollectionViewController: UIImagePickerControllerDelegate, UINavi
 
             // reload the collection view with the new data
             collectionView.reloadData()
+        }
+    }
+
+}
+
+
+protocol ImageLoaderViewControllerDelegate {
+    func dismiss()
+    func addUploadedImage(uploadedImage: UploadedImage)
+}
+
+// ImageCollectionViewController conforms to the protocol
+// we created above, which means it needs to implement
+// the dismiss() and addUploadedImage(...) methods
+extension ImageCollectionViewController: ImageLoaderViewControllerDelegate {
+
+    func dismiss() {
+        guard let imageLoaderVC =  imageLoaderViewController else { return }
+        imageLoaderVC.dismiss(animated: true, completion: nil)
+    }
+
+    func addUploadedImage(uploadedImage: UploadedImage) {
+        // get the index of the uploaded image that matches the one
+        // we received from the ImageLoaderViewController
+        let index = uploadedImages.firstIndex { uploaded -> Bool in
+            uploaded.image == uploadedImage.image
+        }
+
+        // if we find an index
+        if let i = index {
+            // save the uploaded image to our uploadedImages array
+            // at the index we found
+            uploadedImages[i] = uploadedImage
         }
     }
 

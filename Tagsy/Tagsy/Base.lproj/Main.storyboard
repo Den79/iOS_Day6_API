@@ -31,14 +31,37 @@
                     <view key="view" contentMode="scaleToFill" id="dW4-aj-7sY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zya-uW-ye5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                            </imageView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UdO-Ce-Z2o">
+                                <rect key="frame" x="60" y="746" width="294" height="2"/>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LLI-8v-vsj" firstAttribute="bottom" secondItem="UdO-Ce-Z2o" secondAttribute="bottom" constant="60" id="T8Y-Bz-PLS"/>
+                            <constraint firstItem="Zya-uW-ye5" firstAttribute="trailing" secondItem="LLI-8v-vsj" secondAttribute="trailing" id="WmV-Ob-uSI"/>
+                            <constraint firstItem="Zya-uW-ye5" firstAttribute="bottom" secondItem="LLI-8v-vsj" secondAttribute="bottom" id="Yf8-R2-vqF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UdO-Ce-Z2o" secondAttribute="trailing" constant="40" id="aQ5-rB-xro"/>
+                            <constraint firstItem="UdO-Ce-Z2o" firstAttribute="leading" secondItem="dW4-aj-7sY" secondAttribute="leadingMargin" constant="40" id="bDZ-Q8-esR"/>
+                            <constraint firstItem="Zya-uW-ye5" firstAttribute="top" secondItem="LLI-8v-vsj" secondAttribute="top" id="dHj-wg-U43"/>
+                            <constraint firstItem="LLI-8v-vsj" firstAttribute="bottom" secondItem="Zya-uW-ye5" secondAttribute="bottom" id="gCR-g7-Joq"/>
+                            <constraint firstItem="Zya-uW-ye5" firstAttribute="leading" secondItem="LLI-8v-vsj" secondAttribute="leading" id="jJq-t5-cdK"/>
+                            <constraint firstItem="Zya-uW-ye5" firstAttribute="top" secondItem="LLI-8v-vsj" secondAttribute="top" id="sEr-dd-9ck"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="LLI-8v-vsj"/>
                     </view>
                     <navigationItem key="navigationItem" id="lRz-dI-jMu"/>
+                    <connections>
+                        <outlet property="imageView" destination="Zya-uW-ye5" id="3fx-Fm-ACI"/>
+                        <outlet property="progressView" destination="UdO-Ce-Z2o" id="c9F-Y7-Yye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gmK-Ti-Dn3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2780" y="-560"/>
+            <point key="canvasLocation" x="2779.7101449275365" y="-560.49107142857144"/>
         </scene>
         <!--Image Collection View Controller-->
         <scene sceneID="tSE-be-p2B">
