@@ -12,7 +12,7 @@ private let reuseIdentifier = "imageCell"
 var uploadedImages: [UploadedImage] = []
 let imagePicker = UIImagePickerController()
 
-class ImageCollectionViewController: UICollectionViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ImageCollectionViewController: UICollectionViewController {
   
   @IBAction func tappedPlusButton(_ sender: UIBarButtonItem) {
     imagePicker.sourceType = .photoLibrary
@@ -63,6 +63,8 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
     
         return cell
     }
+  
+  
 
     // MARK: UICollectionViewDelegate
 
@@ -94,5 +96,31 @@ class ImageCollectionViewController: UICollectionViewController, UIImagePickerCo
     
     }
     */
+
+}
+
+extension ImageCollectionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    // this method is called when the user has selected an image
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+
+        // get the image that the user selected
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            // create an UploadedImage initialized with the chosen image
+            let uploaded = UploadedImage(tags: [], colors: [], id: nil, image: image)
+
+            // add new UploadedImage to the images array
+            uploadedImages.append(uploaded)
+
+            // dismiss the image picker
+            imagePicker.dismiss(animated: false, completion: nil)
+
+            // present the imageLoaderVC
+            performSegue(withIdentifier: "showImageLoader", sender: self)
+
+            // reload the collection view with the new data
+            collectionView.reloadData()
+        }
+    }
 
 }
