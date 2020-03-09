@@ -46,24 +46,27 @@ class ImageCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
+    // Showing the Image Collection
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
-
+    // Showing the Image Collection
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return uploadedImages.count
     }
-
+    // Showing the Image Collection
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+
+        let imageview: UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100));
+        imageview.image = uploadedImages[indexPath.row].image
+
+        cell.contentView.addSubview(imageview)
+
         return cell
     }
+  
   
     // we  pass the image to our ImageLoaderViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,6 +85,7 @@ class ImageCollectionViewController: UICollectionViewController {
         imageLoaderVC.uploadedImage = uploadedImages.last
         return
     }
+  
 
     // MARK: UICollectionViewDelegate
 
