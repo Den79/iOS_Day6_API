@@ -17,6 +17,7 @@
 		B74916712416B0D700A86A44 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74916702416B0D700A86A44 /* ImageDetailViewController.swift */; };
 		B74916742416B2E400A86A44 /* UploadedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74916732416B2E400A86A44 /* UploadedImage.swift */; };
 		B74916762416B2F200A86A44 /* ImageColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74916752416B2F200A86A44 /* ImageColor.swift */; };
+		B74916782416B83800A86A44 /* ImageLoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74916772416B83800A86A44 /* ImageLoaderViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B74916702416B0D700A86A44 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		B74916732416B2E400A86A44 /* UploadedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadedImage.swift; sourceTree = "<group>"; };
 		B74916752416B2F200A86A44 /* ImageColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageColor.swift; sourceTree = "<group>"; };
+		B74916772416B83800A86A44 /* ImageLoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 			children = (
 				B749166E2416AEAE00A86A44 /* ImageCollectionViewController.swift */,
 				B74916702416B0D700A86A44 /* ImageDetailViewController.swift */,
+				B74916772416B83800A86A44 /* ImageLoaderViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				B749166F2416AEAE00A86A44 /* ImageCollectionViewController.swift in Sources */,
 				B74916572416AC0200A86A44 /* AppDelegate.swift in Sources */,
 				B74916612416AC0200A86A44 /* Tagsy.xcdatamodeld in Sources */,
+				B74916782416B83800A86A44 /* ImageLoaderViewController.swift in Sources */,
 				B74916592416AC0200A86A44 /* SceneDelegate.swift in Sources */,
 				B74916762416B2F200A86A44 /* ImageColor.swift in Sources */,
 				B74916712416B0D700A86A44 /* ImageDetailViewController.swift in Sources */,
